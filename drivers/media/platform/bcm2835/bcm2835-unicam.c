@@ -1459,7 +1459,7 @@ static void unicam_start_rx(struct unicam_device *dev, dma_addr_t *addr)
 	reg_write_field(dev, UNICAM_ANA, 0, UNICAM_DDL);
 
 	/* Always start in trigger frame capture mode (UNICAM_FCM set) */
-	val = UNICAM_FSIE | UNICAM_FEIE | UNICAM_FCM | UNICAM_IBOB;
+	val = UNICAM_FSIE | UNICAM_FEIE | UNICAM_FCM ;
 	set_field(&val, line_int_freq, UNICAM_LCIE_MASK);
 	reg_write(dev, UNICAM_ICTL, val);
 	reg_write(dev, UNICAM_STA, UNICAM_STA_MASK_ALL);
